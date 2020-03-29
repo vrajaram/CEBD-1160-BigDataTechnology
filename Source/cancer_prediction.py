@@ -24,7 +24,7 @@ def graph():
                   'worst smoothness', 'worst compactness', 'worst concavity',
                   'worst concave points', 'worst symmetry', 'worst fractal dimension']
 
-    fig, axes = plt.subplots(3, 3, figsize=(8, 8))
+    fig, axes = plt.subplots(3, 3, figsize=(10, 10))
 
     axes[0][0].scatter(df['Diagnosis'], df['mean radius'], alpha='0.2', marker=",", c='blue')
     axes[0][1].scatter(df['Diagnosis'], df['mean perimeter'], alpha='0.2', marker="o", c='green')
@@ -55,6 +55,16 @@ def graph():
     axes[2][0].set_ylabel('mean symmetry')
     axes[2][1].set_ylabel('mean fractal dimension')
     axes[2][2].set_ylabel('mean texture')
+
+    axes[0][0].set_title('Diagnosis Vs mean radius')
+    axes[0][1].set_title('Diagnosis Vs mean perimeter')
+    axes[0][2].set_title('Diagnosis Vs mean smoothness')
+    axes[1][0].set_title('Diagnosis Vs mean compactness')
+    axes[1][1].set_title('Diagnosis Vs mean concavity')
+    axes[1][2].set_title('Diagnosis Vs mean concave points')
+    axes[2][0].set_title('Diagnosis Vs mean symmetry')
+    axes[2][1].set_title('Diagnosis Vs mean fractal dimension')
+    axes[2][2].set_title('Diagnosis Vs mean texture')
 
     plt.tight_layout()
     plt.savefig('../plots/Diagnosis.png', dpi=300)
@@ -95,6 +105,7 @@ def main():
     print('Overall f1-score')
     print(f1_score(y_test, predicted_values, average="macro"))
 
+    # Graph for accuracy of the test data
     plt_array = np.arange(0, predicted_values.size)
 
     actual = np.zeros(predicted_values.size)
@@ -104,6 +115,7 @@ def main():
         else:
             actual[x] = 0
 
+    plt.figure(figsize=(5,5))
     plt.plot(plt_array, actual, 'gv')
     plt.xlabel('Number of test iteration')
     plt.ylabel('Correct Predicted value')
