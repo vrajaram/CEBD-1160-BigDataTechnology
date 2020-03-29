@@ -95,17 +95,20 @@ def main():
     print('Overall f1-score')
     print(f1_score(y_test, predicted_values, average="macro"))
 
-    t = np.arange(0, 200)
+    plt_array = np.arange(0, predicted_values.size)
 
-    print(predicted_values[0])
-    print(y_test)
+    actual = np.zeros(predicted_values.size)
+    for x in plt_array:
+        if predicted_values[x]==y_test[x]:
+            actual[x] = 1
+        else:
+            actual[x] = 0
 
-    fig, axes = plt.subplots(3, 3, figsize=(8, 8))
+    plt.plot(plt_array, actual, 'gv')
+    plt.xlabel('Number of test iteration')
+    plt.ylabel('Correct Predicted value')
+    plt.title('Accuracy of test')
 
-    axes.scatter(t, predicted_values, 'r--')
-
-
-    plt.tight_layout()
     plt.legend()
     plt.savefig('../plots/performance.png', dpi=300)
 
