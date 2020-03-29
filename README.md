@@ -11,7 +11,7 @@ Final Project to introduction to big data technology
 Your repository should include the following:
 
 - Python script for your analysis: `cancer_prediction.py`
-- Results figure/saved file:  `figures/`
+- Results figure/saved file:  `plots/`
 - runtime-instructions in a file named RUNME.md
 
 -----
