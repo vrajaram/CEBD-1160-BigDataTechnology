@@ -10,9 +10,8 @@ Final Project to introduction to big data technology
 ### Resources
 Your repository should include the following:
 
-- Python script for your analysis: `network_analysis.py`
-- Results figure/saved file:  `figures/`
-- Dockerfile for your experiment: `Dockerfile`
+- Python script for your analysis: `cancer_prediction.py`
+- Results figure/saved file:  `plots/`
 - runtime-instructions in a file named RUNME.md
 
 -----
@@ -37,7 +36,7 @@ The dataset obtained from the University of Wisconsin, describes the features of
 
 The target in our dataset is to predict whether the tumor is either malignant or benign. Therefore this dataset falls under the classification model of the supervised machine learning. Hence, we use the Logistic Regressor built in scikit-learn for simplicity and applicability to the problem in hand. Psuedocode for the regressor can be found in this link (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
-To train the model [2] and to obtain the metrics of the model [3], methods are available in the scikit learn. The graph is generated to compare the mean values of the features with type of tumor.
+To train the model [2] and to obtain the metrics of the model [3], methods are available in the scikit learn. The graph is generated to compare the mean values of the features with type of tumor. Based on the graph below, we could see that there isn't any major difference in the mean value of characteristics that differs malignant tumor from benign tumor.
 
 ![matrix](./plots/Diagnosis.png)
 
@@ -55,8 +54,8 @@ The method used here to determine the type of tumor has accuracy of 95%(approxim
 Hence, we could say that this model is partially complete and further development is required for application. This can be acheived by adding more features to dataset and more data.
 
 ### References
-[1] https://study.com/academy/lesson/benign-vs-malignant-definition-characteristics-differences.html
-[2] https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
-[3] https://scikit-learn.org/stable/modules/model_evaluation.html
+ [1] https://study.com/academy/lesson/benign-vs-malignant-definition-characteristics-differences.html
+ [2] https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+ [3] https://scikit-learn.org/stable/modules/model_evaluation.html
 
 -------
