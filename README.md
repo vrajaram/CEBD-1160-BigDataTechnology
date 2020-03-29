@@ -19,46 +19,44 @@ Your repository should include the following:
 
 ## Research Question
 
-Based on the connectivity between two brain regions in one hemisphere, can we predict the connectivity between the same regions in the other hemisphere?
+Based on the geometrical characteristics of tumor to determine whether they are malignant or benign tumor?
 
 ### Abstract
 
-Derived from Diffusion-Weighted Magnetic Resonance Imaging (DWI, d-MRI), we have derived "maps" of structural connectivity between brain regions.
-Using these data, we may be able to understand relationships between brain regions and their relative connectivity, which can then be used for targetted interventions in neurodegenerative diseases.
-Here, we tried to predict the connectivity between two unique brain regions based on all other known brain connectivity maps.
-Based on the preliminary performance of this regressor, we found that the current model didn't provide consistent performance, but shows promise for success with more sophisticated methods.
-
+In this project, based on the data available from Wisconsin Diagnostic Breast Cancer(WDBC): We are creating a model to predict the type of tumor based on the geometrical characteristics of tumor. This model will help in better and quick decision making on treatment for either malignant or benign tumor, with initial data on geometrical characteristics of tumor. Using logistic regression model available in sklearn library a model will be created to predict the behavior. Based on the F1 score of the regressor the initial test provided encouraging result, but due to its application in medical field the F1 score must be improved further.
 
 ### Introduction
 
-The graphs used are structural "connectomes" from the publicly available BNU1 dataset([https://neurodata.io/mri-cloud/](https://neurodata.io/mri-cloud/)), processed by Greg Kiar using the ndmg software library [https://github.com/neurodata/ndmg](https://github.com/neurodata/ndmg).
-The graphs used here are only a subset of those in the dataset, and in particular only include several of the edges pertaining to the hippocampus and entorhinal cortex for both the left and right hemispheres. 
+There are two different types of tumor:
+Malignant tumor - which may invade surrounding tissue or spread around the body
+Benign tumor - which does not affect the surrounding tissue or spread around the body. [1]
+
+The dataset obtained from the University of Wisconsin, describes the features of cell nuclei present in the digitized image. Based on the features obtained the type of tumor is predicted. The graphs are obtained from this dataset. More details about the dataset can be found in the file(./data/wdbc.names).
 
 ### Methods
 
-The method used for modelling this data was the Ridge Regressor built into scikit-learn.
-Pseudocode (and in particular, the objective function being minimized) can be found [here](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html).
-Simply put, this objective function minimizes the linear least squares function between predicted and expected value, while being regularized by the L2 norm of the estimated weight matrix.
-This method was chosen because of its simplicity.
+The target in our dataset is to predict whether the tumor is either malignant or benign. Therefore this dataset falls under the classification model of the supervised machine learning. Hence, we use the Logistic Regressor built in scikit-learn for simplicity and applicability to the problem in hand. Psuedocode for the regressor can be found in this link (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
-The data itself was organized into a matrix, and all connections between brain regions with available data were sorted, and then transformed into a table. We attempted to predict the connection found at location 12 in the figure below, from all other connections.
+To train the model [2] and to obtain the metrics of the model [3], methods are available in the scikit learn. The graph is generated to compare the mean values of the features with type of tumor.
 
-![matrix](./figures/average_graph.png)
+![matrix](./plots/Diagnosis.png)
 
 ### Results
 
-The performance of the regressor was an R^2 value of 0.661. The figure below shows the performance on the testing set.
+The F1 score of the regressor is ~0.95 and the value can be improved by more data.
+![performange figure](./plots/performance.png)
 
-![performange figure](./figures/performance.png)
-
-We can see that in general, our regressor seems to underestimate our edgeweights. In cases where the connections are small, the regressor performs quite well, though in cases where the strength is higher we notice that the
-performance tends to degrade.
+After doing trial and error method, with removing multiple features it is noted that more features we have in our dataset and more data in the dataset the F1 score improved. Hence we can say that by addding more data to training and testing the model the F1 score can be improved.
 
 ### Discussion
 
-The method used here does not solve the problem of identifying the strength of connection between two brain regions from looking at the surrounding regions. This method shows that a relationship may be learnable between these features, but performance suffers when the connection strength is towards the extreme range of observed values. To improve this, I would potentially perform dimensionality reduction, such as PCA, to try and compress the data into a more easily learnable range.
+The method used here to determine the type of tumor has accuracy of 95%(approximately) and F1 score of ~0.95. Based on these numbers the model we created could solve the problem and predict the tumor. But the above number is not suitable for the field of application as the disease we are concentrating is terminal if untreated or wrongly treated. Therefore, more data is required to train the model, to increase the accuracy and F1 score. 
+
+Hence, we could say that this model is partially complete and further development is required for application. This can be acheived by adding more features to dataset and more data.
 
 ### References
-The links referenced were included in my discussion, above.
+[1] https://study.com/academy/lesson/benign-vs-malignant-definition-characteristics-differences.html
+[2] https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+[3] https://scikit-learn.org/stable/modules/model_evaluation.html
 
 -------
