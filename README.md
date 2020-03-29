@@ -35,7 +35,7 @@ The dataset obtained from the University of Wisconsin, describes the features of
 
 ### Methods
 
-The target in our dataset is to predict whether the tumor is either malignant or benign. Therefore this model falls under the classification model of the supervised machine learning. Hence, we use the Logistic Regressor built in scikit-learn for simplicity and applicability to the problem in hand. Psuedocode for the regressor can be found in this link (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+The target in our dataset is to predict whether the tumor is either malignant or benign. Therefore this dataset falls under the classification model of the supervised machine learning. Hence, we use the Logistic Regressor built in scikit-learn for simplicity and applicability to the problem in hand. Psuedocode for the regressor can be found in this link (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
 To train the model [2] and to obtain the metrics of the model [3], methods are available in the scikit learn. The graph is generated to compare the mean values of the features with type of tumor.
 
@@ -50,12 +50,11 @@ After doing trial and error method, with removing multiple features it is noted 
 
 ### Discussion
 
-The method used here to determine the type of tumor has accuracy of 95%(approximately) and F1 score of ~0.95. Based on these numbers the model we created could solve the problem and predict the tumor. But the above number is not suitable for the field of application as the disease we are concentrating is terminal if untreated. Therefore, more data is required to train the model, to increase the accuracy and F1 score. Hence, we could say that this model is partially complete and further development is required for application.
+The method used here to determine the type of tumor has accuracy of 95%(approximately) and F1 score of ~0.95. Based on these numbers the model we created could solve the problem and predict the tumor. But the above number is not suitable for the field of application as the disease we are concentrating is terminal if untreated or wrongly treated. Therefore, more data is required to train the model, to increase the accuracy and F1 score. Hence, we could say that this model is partially complete and further development is required for application.
 
 ### References
 [1] https://study.com/academy/lesson/benign-vs-malignant-definition-characteristics-differences.html
-
 [2] https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
-
 [3] https://scikit-learn.org/stable/modules/model_evaluation.html
+
 -------
