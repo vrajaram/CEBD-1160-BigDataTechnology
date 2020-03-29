@@ -31,7 +31,7 @@ There are two different types of tumor:
 Malignant tumor - which may invade surrounding tissue or spread around the body
 Benign tumor - which does not affect the surrounding tissue or spread around the body. [1]
 
-The dataset obtained from the University of Wisconsin, describes the features of cell nuclei present in the digitized image. Based on the features obtained the type of tumor is predicted. The graphs are obtained from this dataset.
+The dataset obtained from the University of Wisconsin, describes the features of cell nuclei present in the digitized image. Based on the features obtained the type of tumor is predicted. The graphs are obtained from this dataset. More details about the dataset can be found in the file(./data/wdbc.names).
 
 ### Methods
 
@@ -43,30 +43,19 @@ To train the model [2] and to obtain the metrics of the model [3], methods are a
 
 ### Results
 
-Brief (2 paragraph) description about your results. Include:
+The F1 score of the regressor is ~0.95 and the value can be improved by more data.
+![performange figure](./plots/performance.png)
 
-At least 1 figure
-At least 1 "value" that summarizes either your data or the "performance" of your method
-A short explanation of both of the above
-
-The performance of the regressor was an R^2 value of 0.661. The figure below shows the performance on the testing set.
-
-![performange figure](./figures/performance.png)
-
-We can see that in general, our regressor seems to underestimate our edgeweights. In cases where the connections are small, the regressor performs quite well, though in cases where the strength is higher we notice that the
-performance tends to degrade.
+After doing trial and error method, with removing multiple features it is noted that more features we have in our dataset and more data in the dataset the F1 score improved. Hence we can say that by addding more data to training and testing the model the F1 score can be improved.
 
 ### Discussion
 
-Brief (no more than 1-2 paragraph) description about what you did. Include:
-
-interpretation of whether your method "solved" the problem
-suggested next step that could make it better.
-
-The method used here does not solve the problem of identifying the strength of connection between two brain regions from looking at the surrounding regions. This method shows that a relationship may be learnable between these features, but performance suffers when the connection strength is towards the extreme range of observed values. To improve this, I would potentially perform dimensionality reduction, such as PCA, to try and compress the data into a more easily learnable range.
+The method used here to determine the type of tumor has accuracy of 95%(approximately) and F1 score of ~0.95. Based on these numbers the model we created could solve the problem and predict the tumor. But the above number is not suitable for the field of application as the disease we are concentrating is terminal if untreated. Therefore, more data is required to train the model, to increase the accuracy and F1 score. Hence, we could say that this model is partially complete and further development is required for application.
 
 ### References
 [1] https://study.com/academy/lesson/benign-vs-malignant-definition-characteristics-differences.html
+
 [2] https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+
 [3] https://scikit-learn.org/stable/modules/model_evaluation.html
 -------
