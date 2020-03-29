@@ -67,7 +67,10 @@ def graph():
     axes[2][2].set_title('Diagnosis Vs mean texture')
 
     plt.tight_layout()
-    plt.savefig('../plots/Diagnosis.png', dpi=300)
+    if os.path.exists('../plots'):
+        plt.savefig('../plots/Diagnosis.png', dpi=300)
+    else:
+        print('Path does not exist\n')
 
 def main():
     cancer = datasets.load_breast_cancer()
@@ -121,8 +124,11 @@ def main():
     plt.ylabel('Correct Predicted value')
     plt.title('Accuracy of test')
 
-    plt.legend()
-    plt.savefig('../plots/performance.png', dpi=300)
+    plt.tight_layout()
+    if os.path.exists('../plots'):
+        plt.savefig('../plots/performance.png', dpi=300)
+    else:
+        print('Path does not exist\n')
 
     # Generate Graph
     graph()
