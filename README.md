@@ -50,7 +50,9 @@ After doing trial and error method, with removing multiple features it is noted 
 
 ### Discussion
 
-The method used here to determine the type of tumor has accuracy of 95%(approximately) and F1 score of ~0.95. Based on these numbers the model we created could solve the problem and predict the tumor. But the above number is not suitable for the field of application as the disease we are concentrating is terminal if untreated or wrongly treated. Therefore, more data is required to train the model, to increase the accuracy and F1 score. Hence, we could say that this model is partially complete and further development is required for application.
+The method used here to determine the type of tumor has accuracy of 95%(approximately) and F1 score of ~0.95. Based on these numbers the model we created could solve the problem and predict the tumor. But the above number is not suitable for the field of application as the disease we are concentrating is terminal if untreated or wrongly treated. Therefore, more data is required to train the model, to increase the accuracy and F1 score. 
+
+Hence, we could say that this model is partially complete and further development is required for application. This can be acheived by adding more features to dataset and more data.
 
 ### References
 [1] https://study.com/academy/lesson/benign-vs-malignant-definition-characteristics-differences.html
