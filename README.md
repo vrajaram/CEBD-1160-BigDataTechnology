@@ -36,7 +36,7 @@ The dataset obtained from the University of Wisconsin, describes the features of
 
 The target in our dataset is to predict whether the tumor is either malignant or benign. Therefore this dataset falls under the classification model of the supervised machine learning. Hence, we use the Logistic Regressor built in scikit-learn for simplicity and applicability to the problem in hand. Psuedocode for the regressor can be found in this link (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
-To train the model [2] and to obtain the metrics of the model [3], methods are available in the scikit learn. The graph is generated to compare the mean values of the features with type of tumor. Based on the graph below, we could see that there isn't any major difference in the mean value of characteristics that differs malignant tumor from benign tumor.
+To train the model [2] and to obtain the metrics of the model [3], methods are available in the scikit learn. The graph is generated to compare the mean values of the features with type of tumor. Based on the graph below, we could see that there isn't any major difference in the mean value of characteristics that differs malignant tumor from benign tumor. Although the malignant tumor is more spread out than benign tumor.
 
 ![matrix](./plots/Diagnosis.png)
 
